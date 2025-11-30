@@ -1,7 +1,28 @@
 body {
+    display: flex;
+    flex-wrap: wrap;
     background-color: #141414;
     font-family: proxima-nova, sans-serif;
     color: whitesmoke;
+    min-height: 100vh; /* full viewport height */
+    margin: 0; /* remove default margin */
+    flex-direction: column;
+    
+}
+
+::selection {
+    background: #FFD700;
+    color: #000;
+}
+
+main {
+  flex: 1; /* grows to fill remaining space, pushes footer down */
+  padding: 20px;
+}
+
+html, body {
+  height: 100%; /* make body fill viewport */
+  margin: 0;
 }
 
 .title {
@@ -29,6 +50,8 @@ header {
     width: 100px;
     height: auto;
     border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 img[alt="under construction"] {
@@ -37,3 +60,61 @@ img[alt="under construction"] {
     max-width: 80%;
     height: auto;
 }
+
+footer {
+    display: flex;
+    gap: 10px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.Collumn {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+a {
+    color: #1E90FF;
+    text-decoration: none;
+    width: fit-content;
+    display: inline-block
+}
+
+.card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: whitesmoke;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
