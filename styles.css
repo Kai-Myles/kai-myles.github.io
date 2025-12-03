@@ -132,7 +132,7 @@ a {
     margin: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 300px;
-    height: 200.5px;
+    height: 175px;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -140,6 +140,10 @@ a {
     align-items: center;
     color: whitesmoke;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Discord img{
+    margin-bottom: 37px;
 }
 
 .card:hover {
@@ -163,4 +167,76 @@ a {
 a.card-a {
     text-decoration: none;
     margin: 50px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Bubble box */
+.tooltip-bubble {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s ease;
+
+  background: #fff;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 3px solid #000;
+
+  position: absolute;
+
+  /* 💥 Bubble positioned top-right of the element */
+  bottom: 110%;
+  left: 100%;
+  transform: translate(-20%, 0);
+
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────── */
+/*  🗨️ TRIANGLE ON *BOTTOM LEFT*   */
+/* ─────────────────────────────── */
+
+/* White triangle (bubble color) */
+.tooltip-bubble::after {
+  content: "";
+  position: absolute;
+
+  bottom: -12px;     /* stick it below the bubble */
+  left: 10px;        /* move it to the bottom-left side */
+
+  width: 0;
+  height: 0;
+
+  border-left: 0px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+}
+
+/* Black outline behind triangle */
+.tooltip-bubble::before {
+  content: "";
+  position: absolute;
+
+  bottom: -15px;
+  left: 9px;
+
+  width: 0;
+  height: 0;
+
+  border-left: 0px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 14px solid #000;
+
+  z-index: -1;
+}
+
+/* Show bubble */
+.tooltip:hover .tooltip-bubble {
+  visibility: visible;
+  opacity: 1;
 }
